@@ -14,10 +14,14 @@ morgan = Worker("Morgan", [0, 0, 4, 5.5, 2, 6, 9])
 
 tips = [1000, 500, 345.66, 333.10, 345.99, 999.10, 810.75]
 
+# Next steps:
+# create a pdf or csv with the data outputted
+# Start being able to read csv and change the function to adapt to that
+# maybe calculate base pay and what a paycheck would be as a last step
+
 
 def tips_earned(workers, tips):
-
-    total_hours = [0, 0, 0, 0, 0, 0, 0]
+    total_hours = np.repeat([0], len(tips))
 
     for worker in workers:
         hours = worker.hours_worked
