@@ -52,9 +52,11 @@ def tips_earned():
     data = list(chunks(earned_tips, len(data.columns) - 2))
     print(data)
 
-    print("We are printing a csv file to show how much tips your employees earned per hour. Please open using excel or google spreadsheets")
-
-    output_data(workers, data)
+    try:
+        output_data(workers, data)
+        print("We are printing a csv file to show how much tips your employees earned per hour. Please open using excel or google spreadsheets")
+    except:
+        print("Looks like you already have a cvs file named employee_tips_earn.csv, please delete it and try again")
 
 
 tips_earned()
